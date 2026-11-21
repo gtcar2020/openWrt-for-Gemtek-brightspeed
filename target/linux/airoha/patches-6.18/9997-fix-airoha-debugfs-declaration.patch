@@ -1,0 +1,14 @@
+--- a/drivers/net/ethernet/airoha/airoha_ppe_debugfs.c
++++ b/drivers/net/ethernet/airoha/airoha_ppe_debugfs.c
+@@ -4,6 +4,8 @@
+  * Author: Lorenzo Bianconi <lorenzo@kernel.org>
+  */
+ 
++#include <linux/types.h>
++
+ #include "airoha_regs.h"
+ #include "airoha_eth.h"
+ 
++static bool airoha_ppe_flow_stats_available(struct airoha_ppe *ppe);
++
+ static int airoha_ppe_debugfs_foe_show(struct seq_file *m, void *private)
